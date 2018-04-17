@@ -15,6 +15,8 @@
 		EC3B0AD6208173DC00F7691E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC3B0AD4208173DC00F7691E /* LaunchScreen.storyboard */; };
 		EC3B0AE1208173DC00F7691E /* ARAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B0AE0208173DC00F7691E /* ARAppTests.swift */; };
 		EC3B0AEC208173DC00F7691E /* ARAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B0AEB208173DC00F7691E /* ARAppUITests.swift */; };
+		EC3B0AFA2082503600F7691E /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3B0AF92082503600F7691E /* pin.png */; };
+		EC4C8A81208263D5001A45A9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8A80208263D5001A45A9 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		EC3B0AE7208173DC00F7691E /* ARAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3B0AEB208173DC00F7691E /* ARAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAppUITests.swift; sourceTree = "<group>"; };
 		EC3B0AED208173DC00F7691E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC3B0AF92082503600F7691E /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		EC4C8A80208263D5001A45A9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +107,11 @@
 				EC3B0ACB208173DB00F7691E /* art.scnassets */,
 				EC3B0ACD208173DB00F7691E /* ViewController.swift */,
 				EC3B0ACF208173DB00F7691E /* Main.storyboard */,
+				EC4C8A80208263D5001A45A9 /* MapViewController.swift */,
 				EC3B0AD2208173DC00F7691E /* Assets.xcassets */,
 				EC3B0AD4208173DC00F7691E /* LaunchScreen.storyboard */,
 				EC3B0AD7208173DC00F7691E /* Info.plist */,
+				EC3B0AF92082503600F7691E /* pin.png */,
 			);
 			path = ARApp;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				EC3B0ACC208173DB00F7691E /* art.scnassets in Resources */,
 				EC3B0AD6208173DC00F7691E /* LaunchScreen.storyboard in Resources */,
 				EC3B0AD3208173DC00F7691E /* Assets.xcassets in Resources */,
+				EC3B0AFA2082503600F7691E /* pin.png in Resources */,
 				EC3B0AD1208173DB00F7691E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC3B0ACE208173DB00F7691E /* ViewController.swift in Sources */,
+				EC4C8A81208263D5001A45A9 /* MapViewController.swift in Sources */,
 				EC3B0ACA208173DB00F7691E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BV5F2D88AC;
 				INFOPLIST_FILE = ARApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BV5F2D88AC;
 				INFOPLIST_FILE = ARApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
