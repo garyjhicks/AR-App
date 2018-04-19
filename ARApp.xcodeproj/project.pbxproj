@@ -16,6 +16,7 @@
 		EC3B0AE1208173DC00F7691E /* ARAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B0AE0208173DC00F7691E /* ARAppTests.swift */; };
 		EC3B0AEC208173DC00F7691E /* ARAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B0AEB208173DC00F7691E /* ARAppUITests.swift */; };
 		EC3B0AFA2082503600F7691E /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3B0AF92082503600F7691E /* pin.png */; };
+		EC3F52BC2086DF40005A5BBA /* bluePin.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3F52BB2086DF40005A5BBA /* bluePin.png */; };
 		EC4C8A81208263D5001A45A9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8A80208263D5001A45A9 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		EC3B0AEB208173DC00F7691E /* ARAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAppUITests.swift; sourceTree = "<group>"; };
 		EC3B0AED208173DC00F7691E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC3B0AF92082503600F7691E /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		EC3F52BB2086DF40005A5BBA /* bluePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluePin.png; sourceTree = "<group>"; };
 		EC4C8A80208263D5001A45A9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				EC3B0AD4208173DC00F7691E /* LaunchScreen.storyboard */,
 				EC3B0AD7208173DC00F7691E /* Info.plist */,
 				EC3B0AF92082503600F7691E /* pin.png */,
+				EC3F52BB2086DF40005A5BBA /* bluePin.png */,
 			);
 			path = ARApp;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				EC3B0ACC208173DB00F7691E /* art.scnassets in Resources */,
 				EC3B0AD6208173DC00F7691E /* LaunchScreen.storyboard in Resources */,
 				EC3B0AD3208173DC00F7691E /* Assets.xcassets in Resources */,
+				EC3F52BC2086DF40005A5BBA /* bluePin.png in Resources */,
 				EC3B0AFA2082503600F7691E /* pin.png in Resources */,
 				EC3B0AD1208173DB00F7691E /* Main.storyboard in Resources */,
 			);

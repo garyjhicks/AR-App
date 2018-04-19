@@ -51,6 +51,39 @@
             </objects>
             <point key="canvasLocation" x="-520.28985507246375" y="-608.96739130434787"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="j5U-WE-QN9">
+            <objects>
+                <viewController id="Ffn-SF-i1T" customClass="ViewController" customModule="ARApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M1x-zf-HjT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4e-pj-osn">
+                                <rect key="frame" x="20" y="33" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OIb-Kc-wjP">
+                                <rect key="frame" x="0.0" y="62" width="414" height="674"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Xcf-6S-Wws"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="0KO-7c-1Us"/>
+                    <connections>
+                        <outlet property="label" destination="G4e-pj-osn" id="jzY-Im-vwu"/>
+                        <outlet property="sceneView" destination="OIb-Kc-wjP" id="8Dd-Bf-N7W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIU-XV-GjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="152"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PhT-dO-B30">
             <objects>
@@ -62,28 +95,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="mDl-Bz-kRa" kind="relationship" relationship="viewControllers" id="wvk-yr-TuB"/>
-                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="Rwz-8T-eei"/>
+                        <segue destination="Ffn-SF-i1T" kind="relationship" relationship="viewControllers" id="z8S-6R-3hs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qly-qK-A3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1472" y="-277"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="tXr-a1-R10">
-            <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
-                    <tabBarItem key="tabBarItem" title="Item" id="L2e-n9-FPj"/>
-                    <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>

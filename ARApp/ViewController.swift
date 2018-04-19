@@ -13,7 +13,8 @@ import CoreLocation
 
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
 
-    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var label: UILabel!
     
     var count = 0
     
@@ -53,6 +54,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         // Run the view's session
         sceneView.session.run(configuration)
         
+        label.text = stepsWords[count]
+        
         prepareToCreate()
         
     }
@@ -66,15 +69,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        sceneView.session.pause()
+        
         self.sceneView.scene.rootNode.enumerateChildNodes { (existingNode, _) in
             existingNode.removeFromParentNode()
         }
         
+        let configuration = ARWorldTrackingConfiguration()
+        sceneView.session.run(configuration, options: [ARSession.RunOptions.resetTracking, ARSession.RunOptions.removeExistingAnchors])
+        
         //Get heading
         if count == stepsWords.count{
             displayAlert(title: "Yay!", message: "You have arrived at your destination!")
+            label.text = "You have arrived!"
         }
         else{
+            label.text = stepsWords[count]
             self.locationManager.startUpdatingHeading()
         }
         
@@ -90,19 +100,29 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         print("Angle: \(Place.angle+90.0)")
         //print(distances)
         
+        let xdir = Float(cos((Place.angle+90.0)*3.1415926/180))
+        let zdir = Float(-sin((Place.angle+90.0)*3.1415926/180))
+        
         print("x direction: \(Float(cos((Place.angle+90.0)*3.1415926/180)))")
         print("z direction: \(Float(-sin((Place.angle+90.0)*3.1415926/180)))")
         
         if (Place.sent) {
             
             for i in 1...travel {
-                let vector = SCNVector3Make(Float(cos((Place.angle+90.0)*3.1415926/180))*Float(i), -1.2, Float(-sin((Place.angle+90.0)*3.1415926/180))*Float(i))
+                let vector = SCNVector3Make(xdir*Float(i), -1.2, zdir*Float(i))
                 //print(vector)
                 createBall(position: vector)
             }
             
-            //let pinPlace = SCNVector3Make(0, 1, Float(stepDistances[count]))
-            //createPin(position: pinPlace)
+            let pinPlace = SCNVector3Make(xdir*Float(travel), 0, zdir*Float(travel))
+            //let pinPlace = SCNVector3Make(xdir*2.0, 0, zdir*2.0)
+            
+            if count == stepsWords.count-1{
+                createPin(position: pinPlace, image: "pin.png")
+            }
+            else{
+                createPin(position: pinPlace, image: "bluePin.png")
+            }
             
             count+=1
             print("Count: \(count)")
@@ -118,12 +138,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         sceneView.scene.rootNode.addChildNode(ballNode)
     }
     
-    func createPin(position: SCNVector3){
+    func createPin(position: SCNVector3, image: String){
         let box = SCNBox(width: 0.2, height: 0.2, length: 0.005, chamferRadius: 0)
         let boxNode = SCNNode(geometry: box)
         
         let material = SCNMaterial()
-        material.diffuse.contents = UIImage(named: "pin.png")
+        material.diffuse.contents = UIImage(named: image)
         box.materials = [material]
         
         boxNode.opacity = 1.0
@@ -141,11 +161,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         let userLocation: CLLocation = locations[0]
         currentLocation = userLocation
+        //print(currentLocation)
     
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        let userHeading = Place.firstHeading!
+        //let userHeading = Place.firstHeading!
+        let userHeading = newHeading.trueHeading
+        Place.firstHeading = userHeading
         angleMe = (360.0-userHeading) + 90.0
         if angleMe >= 360.0 {
             angleMe = angleMe-360
