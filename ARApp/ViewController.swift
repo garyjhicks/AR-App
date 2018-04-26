@@ -17,6 +17,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     @IBOutlet weak var label: UILabel!
     
     var count = 0
+    var initialAppear = false
     
     var currentLocation: CLLocation? = nil
     //var destination: CLLocation? = nil
@@ -54,9 +55,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         // Run the view's session
         sceneView.session.run(configuration)
         
-        label.text = stepsWords[count]
-        
-        prepareToCreate()
+        if initialAppear == false {
+            label.text = stepsWords[count]
+            prepareToCreate()
+            print("ViewAppeared")
+            initialAppear=true
+        }
         
     }
     
@@ -132,6 +136,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     func createBall(position: SCNVector3){
         let ballShape = SCNSphere(radius: 0.1)
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.purple
+        ballShape.materials = [material]
+        
         let ballNode = SCNNode(geometry: ballShape)
         ballNode.position = position
         ballNode.opacity = 0.5
@@ -139,7 +148,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     func createPin(position: SCNVector3, image: String){
-        let box = SCNBox(width: 0.2, height: 0.2, length: 0.005, chamferRadius: 0)
+        let box = SCNBox(width: 0.2, height: 0.2, length: 0.02, chamferRadius: 0)
         let boxNode = SCNNode(geometry: box)
         
         let material = SCNMaterial()
